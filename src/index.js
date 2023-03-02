@@ -10,8 +10,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", function (req, res) {
+  res.send({msg:'this is working'});
+});
+
+app.get("/form", function (req, res) {
   res.sendFile(__dirname + "/views/index.html");
 });
+
 
 app.post("/sendMail", async (req, res) => {
   const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
