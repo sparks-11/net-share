@@ -2,7 +2,8 @@ import express from "express";
 const app = express();
 import dotenv from "dotenv";
 import bodyParser from "body-parser";
-import writeMailToUser from "./services/mailService";
+import nodemailer from "nodemailer";
+// import writeMailToUser from "./services/mailService";
 
 dotenv.config();
 app.use(express.json());
@@ -26,6 +27,31 @@ app.post("/sendMail", async (req, res) => {
     res.sendStatus(400).send(err);
   }
 });
+
+async function writeMailToUser(options) {
+  const { body, username, sendto } = options;
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: process.env.USER_MAIL,
+      pass: process.env.USER_SALT,
+    },
+  });
+
+  try {
+    await transporter.sendMail({
+      from: '"netShare" <godgamergg560@gmail.com>',
+      to: sendto,
+      subject: `Hello from ${username}`,
+      text: `These are the details attached by the sender please take a look at it.`,
+      html: `<strong>${body}</strong>`,
+      headers: { "x-myheader": "test header" },
+    });
+    return "message send successfully";
+  } catch (error) {
+    return "something went wrong" + error;
+  }
+}
 
 app.listen(process.env.PORT, () => {
   console.log("app is up and runnig on port:" + process.env.PORT);
