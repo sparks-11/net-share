@@ -1,11 +1,11 @@
 import nodemailer from "nodemailer";
 
-interface options {
-  body: string;
-  username: string;
-  sendto: string;
-}
-export default async function writeMailToUser(options: options) {
+// interface options {
+//   body: string;
+//   username: string;
+//   sendto: string;
+// }
+export default async function writeMailToUser(options) {
   const { body, username, sendto } = options;
   const transporter = nodemailer.createTransport({
     service: "gmail",
