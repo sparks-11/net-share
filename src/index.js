@@ -139,5 +139,5 @@ const html = `
 `
 
 app.listen(process.env.PORT, () => {
-  console.log("app is up and runnig on port:" + process.env.PORT, process.env.USER_MAIL, process.env.USER_SALT);
+  console.log("app is up and runnig on port:" + process.env.PORT);
 });
