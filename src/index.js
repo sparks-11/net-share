@@ -3,6 +3,8 @@ const app = express();
 import dotenv from "dotenv";
 import bodyParser from "body-parser";
 import nodemailer from "nodemailer";
+import path from 'path';
+const __dirname = path.resolve();
 // import writeMailToUser from "./services/mailService";
 
 dotenv.config();
