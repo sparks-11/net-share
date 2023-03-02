@@ -108,7 +108,7 @@ const html = `
     <section>
       Hello from Sparks!
     </section>
-    <section>
+    <section style="transform:translate(-50%, -10%);">
     <form action="/sendMail" method="post">
       <input
         id="sender"
