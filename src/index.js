@@ -109,10 +109,7 @@ const html = `
       Hello from Sparks!
     </section>
     <section>
-    <h1>hi welcome to the sparks note mailer</h1>
-    <h3>please enter values and press send btn thanks.</h3>
     <form action="/sendMail" method="post">
-      <label for="data">Enter name: </label>
       <input
         id="sender"
         type="text"
@@ -132,7 +129,7 @@ const html = `
         type="text"
         name="sendto"
         value=""
-        placeholder="please enter the details"
+        placeholder="please enter the sendto"
       />
       <input type="submit" value="send" />
     </form>
