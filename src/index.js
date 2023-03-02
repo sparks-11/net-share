@@ -1,4 +1,4 @@
-import express, { Request, Response } from "express";
+import express from "express";
 const app = express();
 import dotenv from "dotenv";
 import bodyParser from "body-parser";
@@ -8,11 +8,11 @@ dotenv.config();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/", function (req: Request, res: Response) {
+app.get("/", function (req, res) {
   res.sendFile(__dirname + "/views/index.html");
 });
 
-app.post("/sendMail", async (req: Request, res: Response) => {
+app.post("/sendMail", async (req, res) => {
   const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   const { body, username, sendto } = req.body;
   try {
