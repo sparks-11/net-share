@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>hi welcome to the sparks note mailer</h1>
+    <h3>please enter values and press send btn thanks.</h3>
+    <form action="/sendMail" method="post">
+      <label for="data">Enter name: </label>
+      <input
+        id="sender"
+        type="text"
+        name="username"
+        value=""
+        placeholder="please enter you name"
+      />
+      <input
+        id="team_name"
+        type="text"
+        name="body"
+        value=""
+        placeholder="please enter the details"
+      />
+      <input
+        id="team_name"
+        type="text"
+        name="sendto"
+        value=""
+        placeholder="please enter the details"
+      />
+      <input type="submit" value="send" />
+    </form>
+  </body>
+</html>
